@@ -20,6 +20,10 @@ public function rules()
         ];
     }
 
+    public function updated(){
+        $this->validate();
+       }
+
 public function submit(){
 $this->validate();
 }

@@ -20,21 +20,21 @@ class AdminController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(AdminLoginRequest $request): RedirectResponse
+    public function store(AdminLoginRequest $request)
     {
-        $request->authenticate();
+        if($request->authenticate()){
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::ADMIN);
+        }
+        return redirect()->back()->withErrors(['error'=>'Wrong Login']);
 
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::ADMIN);
     }
-
     /**
      * Destroy an authenticated session.
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('web')->logout();
+        Auth::guard('admin')->logout();
 
         $request->session()->invalidate();
 

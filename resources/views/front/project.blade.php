@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
 @section('project-active','active')
+@section('title','Project')
 @section('text-h1','Project')
 @section('current-page','Project')
 @section('content')

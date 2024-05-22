@@ -14,16 +14,15 @@
                 <a href="{{route('front.service')}}" class="nav-item nav-link @yield('service-active')">Service</a>
                 <a href="{{route('front.project')}}" class="nav-item nav-link @yield('project-active')">Project</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle @yield('page-active')" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        <a href="{{route('front.team')}}" class="dropdown-item">Our Team</a>
+                        <a href="{{route('front.testimonial')}}" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
                 <a href="{{route('front.contact')}}" class="nav-item nav-link @yield('contact-active')">Contact</a>
             </div>
-            <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
+            <a href="{{route('front.index')}}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
         </div>
     </nav>
 

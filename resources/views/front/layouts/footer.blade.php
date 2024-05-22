@@ -15,8 +15,8 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
+                <a class="btn btn-link" href="{{route('front.about')}}">About Us</a>
+                <a class="btn btn-link" href="{{route('front.contact')}}">Contact Us</a>
                 <a class="btn btn-link" href="">Privacy Policy</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
                 <a class="btn btn-link" href="">Career</a>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="">Home</a>
+                        <a href="{{route('front.index')}}">Home</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
                         <a href="">FQAs</a>

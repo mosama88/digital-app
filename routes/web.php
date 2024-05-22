@@ -15,7 +15,6 @@ Route::prefix('/')->name('front.')->group(function (){
 
 });
 
-require __DIR__.'/auth.php';
 
 
 

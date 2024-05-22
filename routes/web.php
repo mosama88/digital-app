@@ -8,6 +8,17 @@ Route::prefix('/')->name('front.')->group(function (){
     Route::view('','front.index')->name('index');
 });
 
+
+Route::name('front.')->group(function (){
+    Route::view('/about','front.about')->name('about');
+    Route::view('/service','front.service')->name('service');
+    Route::view('/project','front.project')->name('project');
+    Route::view('/contact','front.contact')->name('contact');
+});
+
+
+
+
 require __DIR__.'/auth.php';
 
 

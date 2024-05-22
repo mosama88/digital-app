@@ -22,6 +22,44 @@
         <!-- /Search -->
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+
+
+            {{-- Language --}}
+            <div class="dropdown d-none d-md-block ms-2">
+                @if (App::getLocale() == 'ar')
+                    <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <img class="me-2" src="{{ asset('dashboard') }}/assets/img/flags/egypt_flag.jpg"
+                             alt="Header Language" height="16">
+                        <strong class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+                    </button>
+                @else
+                    <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <img class="me-2" src="{{ asset('dashboard') }}/assets/img/flags/us_flag.jpg"
+                             alt="Header Language" height="16">
+                        <strong class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+                    </button>
+                @endif
+                <div class="dropdown-menu dropdown-menu-end">
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <!-- item-->
+                        <a class="dropdown-item notify-item" rel="alternate" hreflang="{{ $localeCode }}"
+                           href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            @if ($properties['native'] == 'English')
+                                <img class="me-2" src="{{ asset('dashboard') }}/assets/img/flags/us_flag.jpg"
+                                     alt="Header Language" height="16">
+                            @elseif($properties['native'] == 'العربية')
+                                <img class="me-2" src="{{ asset('dashboard') }}/assets/img/flags/egypt_flag.jpg"
+                                     alt="Header Language" height="16">
+                            @endif
+                            {{ $properties['native'] }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+
             <!-- Place this tag where you want the button to render. -->
             <li class="nav-item lh-1 me-3">
                 <a

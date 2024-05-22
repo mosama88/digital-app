@@ -12,9 +12,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 {
 Route::name('dashboard.')->middleware('auth')->group(function () {
     Route::view('/admin','dashboard.index')->name('index');
+//    Route::view('/admin/login','dashboard.auth.login')->name('login');
+
 });
-
-
 
     require __DIR__.'/auth.php';
 });

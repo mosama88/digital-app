@@ -29,8 +29,19 @@ class AdminLoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
+            'remember' => ['nullable'],
         ];
     }
+
+
+//     public function messages(): array
+// {
+//     return [
+//         'email.required' => 'البريد الالكترونى مطلوب',
+//         'email.email' => 'يجب أن يكون البريد الإلكتروني عنوان بريد إلكتروني صالحًا',
+//         'password.required' => 'كلمة المرور مطلوبة',
+//     ];
+// }
 
     /**
      * Attempt to authenticate the request's credentials.
@@ -46,7 +57,7 @@ class AdminLoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
-            ]); 
+            ]);
         }
 
         RateLimiter::clear($this->throttleKey());

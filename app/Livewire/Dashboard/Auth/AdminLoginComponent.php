@@ -1,25 +1,43 @@
 <?php
 
 namespace App\Livewire\Dashboard\Auth;
-use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Livewire\Attributes\Rule;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Auth\AdminLoginRequest;
+use Illuminate\Validation\ValidationException;
 
 class AdminLoginComponent extends Component
 {
+
+// #[Rule('required|string|email|min:3')]
 public $email;
+// #[Rule('required|string')]
 public $password;
+// #[Rule('nullable')]
 public $remember;
+
+
+// public function rules()
+//     {
+//         return [
+//             'email' => ['required', 'string', 'email'],
+//             'password' => ['required', 'string'],
+//             'remember' => ['nullable'],
+//         ];
+//     }
 
 
 public function rules()
     {
-        return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
-            'remember' => ['nullable'],
-        ];
+        return (new AdminLoginRequest())->rules();
     }
+
+
+    // public function messages()
+    // {
+    //     return (new AdminLoginRequest())->messages();
+    // }
 
 
 public function submit(){

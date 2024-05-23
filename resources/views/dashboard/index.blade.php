@@ -1,5 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('title_admin','Home')
+@section('index.active','active')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">

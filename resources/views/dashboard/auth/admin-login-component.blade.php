@@ -2,7 +2,7 @@
     @csrf
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control @error('email') is-invalid @enderror" wire:model.live="email" placeholder="Enter your email" autofocus/>
+        <input type="text" class="form-control @error('email') is-invalid @enderror" wire:model="email" placeholder="Enter your email" autofocus/>
         @error('email')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -18,7 +18,7 @@
             @endif
         </div>
         <div class="input-group input-group-merge">
-            <input type="password" class="form-control" @error('password') is-invalid @enderror wire:model.live="password"
+            <input type="password" class="form-control" @error('password') is-invalid @enderror wire:model="password"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password"/>
             <span class="input-group-text cursor-pointer "><i class="bx bx-hide"></i></span>
         </div>

@@ -26,7 +26,7 @@
 
 
             {{-- Language --}}
-            <div class="dropdown d-none d-md-block ms-2">
+            {{-- <div class="dropdown d-none d-md-block ms-2">
                 @if (App::getLocale() == 'ar')
                     <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -58,7 +58,7 @@
                         </a>
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Place this tag where you want the button to render. -->
             <li class="nav-item lh-1 me-3">
@@ -124,8 +124,13 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
+
+                        @if (auth('web')->check())
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
+@else
+                        <form method="POST" action="{{ route('logout.admin') }}">
+@endif
                             @csrf
                         <button class="dropdown-item">
                             <i class="bx bx-power-off me-2"></i>
@@ -139,3 +144,6 @@
         </ul>
     </div>
 </nav>
+
+
+

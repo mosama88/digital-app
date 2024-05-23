@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::name('dashboard.')->middleware('auth:admin')->group(function () {
+Route::name('dashboard.')->middleware('admin')->group(function () {
     Route::view('/admin','dashboard.index')->name('index');
 //    Route::view('/admin/login','dashboard.auth.login')->name('login');
 

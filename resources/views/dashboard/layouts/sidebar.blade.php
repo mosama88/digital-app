@@ -67,6 +67,14 @@
                 <div data-i18n="Basic">Settings</div>
             </a>
         </li>
+        
+        <!-- Skills -->
+        <li class="menu-item @yield('skills.active')">
+            <a href="{{route('dashboard.skills')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-task"></i>
+                    <div data-i18n="Basic">Skills</div>
+                </a>
+            </li>
 
         <!-- Layouts -->
         <li class="menu-item">

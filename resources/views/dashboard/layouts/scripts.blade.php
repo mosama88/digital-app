@@ -41,7 +41,7 @@
             if (mySuccessAlert) {
                 setTimeout(() => {
                     mySuccessAlert.classList.add('fade-out');
-                }, 2000);
+                }, 3000);
             }
         });
     });

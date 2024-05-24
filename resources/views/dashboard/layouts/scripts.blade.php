@@ -1,3 +1,6 @@
+
+
+
 <!-- build:js assets/vendor/js/core.js -->
 <script  src="{{asset('dashboard')}}/assets/vendor/libs/jquery/jquery.js"></script>
 <script  src="{{asset('dashboard')}}/assets/vendor/libs/popper/popper.js"></script>
@@ -18,3 +21,28 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+{{-- ####################################     --  Massage --     ######################################### --}}
+<style>
+    .my-success-alert {
+        transition: opacity 1s ease-out;
+    }
+    
+    .my-success-alert.fade-out {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+        Livewire.hook('morph.updated', (el, component) => {
+            const mySuccessAlert = document.querySelector('.my-success-alert');
+
+            if (mySuccessAlert) {
+                setTimeout(() => {
+                    mySuccessAlert.classList.add('fade-out');
+                }, 2000);
+            }
+        });
+    });
+</script>

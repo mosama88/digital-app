@@ -2,7 +2,7 @@
 <form action="" method="POST" wire:submit.prevent='submit'>
     <div class=" card-body row">
         @if (session()->has('success'))
-        <div class="alert alert-primary">
+        <div class="col-6 m-auto text-center alert alert-primary my-success-alert">
             {{ session('success') }}
         </div>
     @endif

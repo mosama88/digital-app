@@ -32,6 +32,7 @@ class UpdateSettings extends Component
     {
         $this->validate();
         $this->settings->save();
+        session()->flash('success','Settings Update Successfully');
     }
 
     

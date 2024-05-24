@@ -1,5 +1,11 @@
+
 <form action="" method="POST" wire:submit.prevent='submit'>
     <div class=" card-body row">
+        @if (session()->has('success'))
+        <div class="alert alert-primary">
+            {{ session('success') }}
+        </div>
+    @endif
         <h5 class="card-header">Add Settings</h5>
 {{-- Name Input --}}
 <div class=" col-md-6 mb-3">
